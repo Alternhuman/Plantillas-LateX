@@ -1,2 +1,11 @@
 .DS_Store
 *.log
+*.maf
+*.mtc
+*.mtc0
+reference/
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
