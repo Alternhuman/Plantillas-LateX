@@ -20,12 +20,15 @@
 % Basic LaTeX packages
 \RequirePackage{fixltx2e}
 
+\RequirePackage{fontspec}
+\newfontfamily\Ritsi[Ligatures=TeX]{Play}
 % Basic packages for XeTeX
 \RequirePackage{xltxtra}
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont[AutoFakeSlant=0.3]{Play}
 \setsansfont[Scale=MatchLowercase,AutoFakeSlant=0.3]{Play}
 \setmonofont[Scale=MatchLowercase]{Andale Mono}
+
 \RequirePackage[protrusion=true]{microtype}
 
 \RequirePackage{polyglossia}
@@ -122,3 +125,6 @@
 % Packages that go after hyperref
 \RequirePackage{cleveref}
 \RequirePackage[hypcap]{caption}
+
+\RequirePackage{graphicx}
+\RequirePackage[printwatermark]{xwatermark}

@@ -12,6 +12,10 @@
 \thelocation{Lugar}
 
 \makeportada
+
+%Comentar para quitar marca de agua
+\newwatermark[allpages,color=red!50,angle=45,scale=3,xpos=0,ypos=0, fontfamily=Ritsi]{\Ritsi BORRADOR}
+
 \begin{document}
 \tableofcontents
 \begin{ritsiabstract}
@@ -21,7 +25,7 @@
 \begingroup
 \renewcommand{\cleardoublepage}{}
 \renewcommand{\clearpage}{}
-\chapter{Capítulo}%\pagestyle{firstpage}
+\chapter{Capítulo}
 \endgroup
 \section{Sección}
 
@@ -42,9 +46,5 @@ Esto es una prueba
 \lipsum[4]
 \lipsum[5]
 \lipsum[6]
-\lipsum[4]
-\lipsum[4]
-\lipsum[4]
-\lipsum[4]
 
 \end{document}
