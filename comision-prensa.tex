@@ -4,11 +4,6 @@
 \documentclass[oneside]{ritsi/prensa}
 
 \usepackage{lipsum}
-\usepackage[all]{background}
-
-\usepackage{tikz}
-\usetikzlibrary{backgrounds}
-\def\tikzmark#1{\tikz[remember picture,overlay]\coordinate(#1);}
 \thetitle{Nota de prensa}
 \title{Informe en \LaTeX}
 \thesubtitle{Subtítulo}
@@ -17,43 +12,13 @@
 \thelocation{Lugar}
 
 \begin{document}
-%http://tex.stackexchange.com/a/41390
-\newcommand{\MyTikzLogo}{% For a logo drawn with TikZ
-\begin{tikzpicture}[remember picture, overlay]
-  \node[inner sep=0pt, opacity=.2] (logo) {\includegraphics[height=0.9\textheight]{img/ritsi-logo}};
-\end{tikzpicture}
-}
 
-\SetBgContents{\MyTikzLogo}% Set tikz picture
-\SetBgPosition{10, -13}% Select location
-%\SetBgOpacity{1.0}% Select opacity
-\SetBgAngle{0.0}% Select roation of logo
-\SetBgScale{1.0}% Select scale factor of logo
 
-%\lipsum[11]
 \thispagestyle{plain}
 \begin{ritsiabstract}
 \lipsum[1]
 \end{ritsiabstract}
 
-%\begingroup
-%\renewcommand{\cleardoublepage}{}
-%\renewcommand{\clearpage}{}
-%\chapter{Capítulo}%\pagestyle{firstpage}
-%\endgroup
-
 \lipsum[1-20]
-\lipsum[2]
-\lipsum[3]
-
-%\chapter{Fin}
-
-%\lipsum[4]
-%\lipsum[5]
-%\lipsum[6]
-%\lipsum[4]
-%\lipsum[4]
-%\lipsum[4]
-%\lipsum[4]
 
 \end{document}

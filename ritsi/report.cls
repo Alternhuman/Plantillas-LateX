@@ -26,6 +26,7 @@
 
 \newcommand{\thetitle}[1]{
    \renewcommand{\thetitlevar}{#1}
+   \title{#1}
 }
 
 \newcommand{\thesubtitle}[1]{
@@ -34,10 +35,12 @@
 
 \newcommand{\thedate}[1]{
    \renewcommand{\thedatevar}{#1}
+   \date{#1}
 }
 
 \newcommand{\theauthor}[1]{
    \renewcommand{\theauthorvar}{#1}
+   \author{#1}
 }
 
 \newcommand{\thelocation}[1]{

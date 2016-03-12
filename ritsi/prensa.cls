@@ -14,10 +14,14 @@
 \RequirePackage{ritsi/ritsi}
 \RequirePackage{wallpaper}
 \RequirePackage{float}
+\RequirePackage[all]{background}
+
+\RequirePackage{tikz}
 
 \newlength{\ritsiheight}
 \setlength{\ritsiheight}{\baselineskip}
 \addtolength{\ritsiheight}{5em}
+
 \newcommand{\thetitlevar}{}
 \newcommand{\thesubtitlevar}{}
 \newcommand{\thedatevar}{}
@@ -26,6 +30,7 @@
 
 \newcommand{\thetitle}[1]{
    \renewcommand{\thetitlevar}{#1}
+   \title{#1}
 }
 
 \newcommand{\thesubtitle}[1]{
@@ -34,10 +39,12 @@
 
 \newcommand{\thedate}[1]{
    \renewcommand{\thedatevar}{#1}
+   \date{#1}
 }
 
 \newcommand{\theauthor}[1]{
    \renewcommand{\theauthorvar}{#1}
+   \author{#1}
 }
 
 \newcommand{\thelocation}[1]{
@@ -53,29 +60,6 @@
 
 }
 
-\fancypagestyle{plain2}{
-   \fancyhf{}
-   \fancyhead[RE,RO]{
-      \color{rojoritsi}
-      \textit{{\thetitlevar}}
-   }
-   \fancyfoot[RE]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
-   \fancyfoot[RO]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
-   \fancyfoot[LO]{\small \color{rojoritsi}Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}
-   % Lineas de separación entre contenido y cabecera/pie
-   \renewcommand{\headrulewidth}{0pt}
-   \renewcommand{\footrulewidth}{0pt}
-}
-
-%\fancypagestyle{firstpage}{
-%   \fancyhf{}
-%   \fancyhead[RE,LO]{
-%      \color{rojoritsi}
-%      \textit{\textbf{\thetitlevar}}\\
-%      \textit{\thesubtitlevar}\\
-%      \textit{\thelocationvar,\thedatevar}
-%   }
-%}
 
 \fancypagestyle{plain}{
    \fancyhf{}
@@ -90,13 +74,37 @@
       \end{minipage}
    }
    \fancyfoot[C]{\small \textbf{Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}\\Comisión de Comunicación y Prensa\\\href{http://ritsi.org}{http://ritsi.org} - \href{mailto:prensa@ritsi.org}{prensa@ritsi.org}}
-   %\fancyfoot[RE]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
-   %\fancyfoot[RO]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
-   %\fancyfoot[LO]{\small \color{rojoritsi}Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}
 
    % Lineas de separación entre contenido y cabecera/pie
    \renewcommand{\headrulewidth}{0pt}
    \renewcommand{\footrulewidth}{1pt}
 }
 
-\pagestyle{plain2}
+\fancypagestyle{plain-nologo}{
+   \fancyhf{}
+   \fancyhead[RE,RO]{
+      \color{rojoritsi}
+      \textit{\textbf{\thetitlevar}}\\
+      \textit{\thelocationvar,\thedatevar}
+   }
+   \fancyfoot[C]{\small \textbf{Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}\\Comisión de Comunicación y Prensa\\\href{http://ritsi.org}{http://ritsi.org} - \href{mailto:prensa@ritsi.org}{prensa@ritsi.org}}
+
+   % Lineas de separación entre contenido y cabecera/pie
+   \renewcommand{\headrulewidth}{0pt}
+   \renewcommand{\footrulewidth}{1pt}
+}
+
+%http://tex.stackexchange.com/a/41390
+\newcommand{\MyTikzLogo}{% For a logo drawn with TikZ
+\begin{tikzpicture}[remember picture, overlay]
+  \node[inner sep=0pt, opacity=.2] (logo) {\includegraphics[height=0.9\textheight]{img/ritsi-logo}};
+\end{tikzpicture}
+}
+
+\SetBgContents{\MyTikzLogo}% Set tikz picture
+\SetBgPosition{10, -13}% Select location
+%\SetBgOpacity{1.0}% Select opacity
+\SetBgAngle{0.0}% Select roation of logo
+\SetBgScale{1.0}% Select scale factor of logo
+
+\pagestyle{plain-nologo}
