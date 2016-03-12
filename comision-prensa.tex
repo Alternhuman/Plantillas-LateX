@@ -1,0 +1,49 @@
+% !TEX TS-program = XeLaTeX
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[oneside]{ritsi/prensa}
+
+\usepackage{lipsum}
+\thetitle{Informe en LaTeX}
+\title{Informe en \LaTeX}
+\thesubtitle{Subtítulo}
+\theauthor{Gorka Maiztegi}
+\thedate{\today}
+\thelocation{Lugar}
+
+\begin{document}
+\tableofcontents
+\begin{ritsiabstract}
+\lipsum[1]
+\end{ritsiabstract}
+
+\begingroup
+\renewcommand{\cleardoublepage}{}
+\renewcommand{\clearpage}{}
+\chapter{Capítulo}%\pagestyle{firstpage}
+\endgroup
+\section{Sección}
+
+Esto es una prueba
+
+\lipsum[1]
+
+\section{Sección 2}
+
+\lipsum[2]
+
+\section{Preliminar}
+
+\lipsum[3]
+
+%\chapter{Fin}
+
+\lipsum[4]
+\lipsum[5]
+\lipsum[6]
+\lipsum[4]
+\lipsum[4]
+\lipsum[4]
+\lipsum[4]
+
+\end{document}
