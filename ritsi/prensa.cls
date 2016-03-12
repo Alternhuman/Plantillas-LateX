@@ -44,19 +44,13 @@
    \renewcommand{\thelocationvar}{#1}
 }
 
-%\newcommand{\makeabstract}[1]{
-%   \begin{minipage}
-   %\textbf{\lipsum[1]}
-%   \end{minipage}
-%}
-
 \newenvironment{ritsiabstract}{%
    \setlength\topsep{0pt}
    \setlength\parskip{0pt}
    \bfseries
 }{%
    {}
-   \vspace{-1cm}
+
 }
 
 \fancypagestyle{plain2}{
@@ -88,7 +82,6 @@
    \fancyhead[RE,RO]{
       \color{rojoritsi}
       \textit{\textbf{\thetitlevar}}\\
-      \textit{\thesubtitlevar}\\
       \textit{\thelocationvar,\thedatevar}
    }
    \fancyhead[LE,LO]{
@@ -96,14 +89,14 @@
       \includegraphics[width=\textwidth]{img/cabecera-documento}
       \end{minipage}
    }
-
-   \fancyfoot[RE]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
-   \fancyfoot[RO]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
-   \fancyfoot[LO]{\small \color{rojoritsi}Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}
+   \fancyfoot[C]{\small \textbf{Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}\\Comisión de Comunicación y Prensa\\\href{http://ritsi.org}{http://ritsi.org} - \href{mailto:prensa@ritsi.org}{prensa@ritsi.org}}
+   %\fancyfoot[RE]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
+   %\fancyfoot[RO]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
+   %\fancyfoot[LO]{\small \color{rojoritsi}Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}
 
    % Lineas de separación entre contenido y cabecera/pie
    \renewcommand{\headrulewidth}{0pt}
-   \renewcommand{\footrulewidth}{0pt}
+   \renewcommand{\footrulewidth}{1pt}
 }
 
 \pagestyle{plain2}
