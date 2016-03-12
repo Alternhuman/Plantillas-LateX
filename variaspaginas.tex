@@ -6,15 +6,23 @@
 \usepackage{lipsum}
 \thetitle{Informe en LaTeX}
 \title{Informe en \LaTeX}
-\thesubtitle{PRUEBA}
+\thesubtitle{Subtítulo}
 \theauthor{Gorka Maiztegi}
 \thedate{\today}
-\thelocation{Madrid}
+\thelocation{Lugar}
 
+\makeportada
 \begin{document}
+\tableofcontents
+\begin{ritsiabstract}
+\lipsum[1]
+\end{ritsiabstract}
 
-\chapter{Capítulo}
-
+\begingroup
+\renewcommand{\cleardoublepage}{}
+\renewcommand{\clearpage}{}
+\chapter{Capítulo}%\pagestyle{firstpage}
+\endgroup
 \section{Sección}
 
 Esto es una prueba

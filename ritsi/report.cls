@@ -44,61 +44,91 @@
    \renewcommand{\thelocationvar}{#1}
 }
 
+%\newcommand{\makeabstract}[1]{
+%   \begin{minipage}
+   %\textbf{\lipsum[1]}
+%   \end{minipage}
+%}
+
+\newenvironment{ritsiabstract}{%
+   \setlength\topsep{0pt}
+   \setlength\parskip{0pt}
+   \bfseries
+}{%
+   {}
+   \vspace{-1cm}
+}
+
+\fancypagestyle{plain2}{
+   \fancyhf{}
+   \fancyhead[RE,RO]{
+      \color{rojoritsi}
+      \textit{{\thetitlevar}}
+   }
+   \fancyfoot[RE]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
+   \fancyfoot[RO]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
+   \fancyfoot[LO]{\small \color{rojoritsi}Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}
+   % Lineas de separación entre contenido y cabecera/pie
+   \renewcommand{\headrulewidth}{0pt}
+   \renewcommand{\footrulewidth}{0pt}
+}
+
+%\fancypagestyle{firstpage}{
+%   \fancyhf{}
+%   \fancyhead[RE,LO]{
+%      \color{rojoritsi}
+%      \textit{\textbf{\thetitlevar}}\\
+%      \textit{\thesubtitlevar}\\
+%      \textit{\thelocationvar,\thedatevar}
+%   }
+%}
+
 \fancypagestyle{plain}{
    \fancyhf{}
-   \fancyhead[RE,LO]{
+   \fancyhead[RE,RO]{
       \color{rojoritsi}
       \textit{\textbf{\thetitlevar}}\\
       \textit{\thesubtitlevar}\\
       \textit{\thelocationvar,\thedatevar}
    }
-   \fancyhead[RO]{
-      %\begin{minipage}{0.5\textwidth}
-      %\begin{flushright}
-      %\color{rojoritsi}Reunión de Estudiantes de Ingenierías \\
-      %Técnicas y Superiores en Informática
-      %\ignorespacesafterend
-      %\end{flushright}
-      %\end{minipage}
-      \begin{minipage}{1.3\ritsiheight}
-      \vspace{-1em}
-      \includegraphics[width=\textwidth]{img/cabecera-documento}
-      \end{minipage}
-   }
-   \fancyhead[LE]{
+   \fancyhead[LE,LO]{
       \begin{minipage}{3.3\ritsiheight}
       \includegraphics[width=\textwidth]{img/cabecera-documento}
       \end{minipage}
-      %\begin{minipage}{0.5\textwidth}
-      %\color{rojoritsi}Reunión de Estudiantes de Ingenierías \\
-      %Técnicas y Superiores en Informática
-      %\end{minipage}
    }
-   \fancyfoot[LE,RO]{\color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
+
+   \fancyfoot[RE]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
+   \fancyfoot[RO]{\small \color{rojoritsi}Página \thepage\ de \pageref*{LastPage}}
+   \fancyfoot[LO]{\small \color{rojoritsi}Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}
+
+   % Lineas de separación entre contenido y cabecera/pie
    \renewcommand{\headrulewidth}{0pt}
    \renewcommand{\footrulewidth}{0pt}
 }
 
-\AtBeginDocument{
-   %\pagenumbering{arabic}
-   %\frontmatter
-   \pagenumbering{arabic}
-   \pagestyle{empty}
+\newcommand{\makeportada}{
+   \AtBeginDocument{
+      %\pagenumbering{arabic}
+      %\frontmatter
+      \pagenumbering{arabic}
+      %\thispagestyle{empty}
 
-   \begin{titlepage}
-      \ThisCenterWallPaper{1}{img/portada}
-      \vspace*{6cm}
-      \hspace*{67mm}
-      %\makebox[0mm][c]{\color{white}\Huge\@title \\* \large\@author}
-      \parbox{80mm}{\centering\color{white}\Huge\textbf{\thetitlevar} \\* \vspace{5mm} \emph{\LARGE\theauthorvar}\\\emph{\Large\thedatevar}}
-   \end{titlepage}
+      \begin{titlepage}
+         \ThisCenterWallPaper{1}{img/portada}
+         \vspace*{6cm}
+         \hspace*{67mm}
+         %\makebox[0mm][c]{\color{white}\Huge\@title \\* \large\@author}
+         \parbox{80mm}{\centering\color{white}\Huge\textbf{\thetitlevar} \\* \vspace{5mm} \emph{\LARGE\theauthorvar}\\\emph{\Large\thedatevar}}
+      \end{titlepage}
 
-   \pagestyle{plain}
+      \thispagestyle{plain2}
 
-   %\mainmatter
-   \tableofcontents
-   %\setcounter{page}{1}
+      %\mainmatter
+      %\tableofcontents
+      %\clearpage
+      %\setcounter{page}{1}
 
+   }
 }
 
-\pagestyle{plain}
+\pagestyle{plain2}
