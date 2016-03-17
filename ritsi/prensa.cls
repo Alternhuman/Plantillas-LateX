@@ -1,3 +1,4 @@
+% !TEX encoding = UTF-8 Unicode
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ritsi/prensa}
 
@@ -65,15 +66,15 @@
    \fancyhf{}
    \fancyhead[RE,RO]{
       \color{rojoritsi}
-      \textit{\textbf{\thetitlevar}}\\
-      \textit{\thelocationvar,\thedatevar}
+      \textit{\textbf{Nota de prensa}}\\
+      \textit{\thelocationvar\hspace{0.3mm},\thedatevar}
    }
    \fancyhead[LE,LO]{
       \begin{minipage}{3.3\ritsiheight}
       \includegraphics[width=\textwidth]{img/cabecera-documento}
       \end{minipage}
    }
-   \fancyfoot[C]{\small \textbf{Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}\\Comisión de Comunicación y Prensa\\\href{http://ritsi.org}{http://ritsi.org} - \href{mailto:prensa@ritsi.org}{prensa@ritsi.org}}
+   \fancyfoot[C]{ \textbf{Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}\\Comisión de Comunicación y Prensa\\\href{http://www.ritsi.org}{http://www.ritsi.org} - \href{mailto:prensa@ritsi.org}{prensa@ritsi.org}}
 
    % Lineas de separación entre contenido y cabecera/pie
    \renewcommand{\headrulewidth}{0pt}
@@ -84,10 +85,9 @@
    \fancyhf{}
    \fancyhead[RE,RO]{
       \color{rojoritsi}
-      \textit{\textbf{\thetitlevar}}\\
-      \textit{\thelocationvar,\thedatevar}
+      \textit{{Nota de prensa} - {\thelocationvar}\hspace{0.3mm},\thedatevar}\\
    }
-   \fancyfoot[C]{\small \textbf{Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}\\Comisión de Comunicación y Prensa\\\href{http://ritsi.org}{http://ritsi.org} - \href{mailto:prensa@ritsi.org}{prensa@ritsi.org}}
+   \fancyfoot[C]{\normalsize \textbf{Reunión de Estudiantes de Ingenierías Técnicas y Superiores en Informática}\\Comisión de Comunicación y Prensa\\\href{http://www.ritsi.org}{www.ritsi.org} - \href{mailto:prensa@ritsi.org}{prensa@ritsi.org}}
 
    % Lineas de separación entre contenido y cabecera/pie
    \renewcommand{\headrulewidth}{0pt}
